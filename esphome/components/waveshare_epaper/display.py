@@ -11,6 +11,7 @@ waveshare_epaper_ns = cg.esphome_ns.namespace('waveshare_epaper')
 WaveshareEPaper = waveshare_epaper_ns.class_('WaveshareEPaper', cg.PollingComponent, spi.SPIDevice,
                                              display.DisplayBuffer)
 WaveshareEPaperTypeA = waveshare_epaper_ns.class_('WaveshareEPaperTypeA', WaveshareEPaper)
+WaveshareEPaperTypeA1 = waveshare_epaper_ns.class_('WaveshareEPaperTypeA1', WaveshareEPaper)
 WaveshareEPaper2P7In = waveshare_epaper_ns.class_('WaveshareEPaper2P7In', WaveshareEPaper)
 WaveshareEPaper2P9InB = waveshare_epaper_ns.class_('WaveshareEPaper2P9InB', WaveshareEPaper)
 WaveshareEPaper4P2In = waveshare_epaper_ns.class_('WaveshareEPaper4P2In', WaveshareEPaper)
@@ -19,12 +20,14 @@ WaveshareEPaper7P5In = waveshare_epaper_ns.class_('WaveshareEPaper7P5In', Wavesh
 WaveshareEPaper7P5InV2 = waveshare_epaper_ns.class_('WaveshareEPaper7P5InV2', WaveshareEPaper)
 
 WaveshareEPaperTypeAModel = waveshare_epaper_ns.enum('WaveshareEPaperTypeAModel')
+WaveshareEPaperTypeA1Model = waveshare_epaper_ns.enum('WaveshareEPaperTypeA1Model')
 WaveshareEPaperTypeBModel = waveshare_epaper_ns.enum('WaveshareEPaperTypeBModel')
 
 MODELS = {
     '1.54in': ('a', WaveshareEPaperTypeAModel.WAVESHARE_EPAPER_1_54_IN),
     '2.13in': ('a', WaveshareEPaperTypeAModel.WAVESHARE_EPAPER_2_13_IN),
     '2.13in-ttgo': ('a', WaveshareEPaperTypeAModel.TTGO_EPAPER_2_13_IN),
+    '2.13in-ttgo-b1': ('a1', WaveshareEPaperTypeA1Model.TTGO_EPAPER_2_13_IN_B1),
     '2.13in-ttgo-b73': ('a', WaveshareEPaperTypeAModel.TTGO_EPAPER_2_13_IN_B73),
     '2.90in': ('a', WaveshareEPaperTypeAModel.WAVESHARE_EPAPER_2_9_IN),
     '2.70in': ('b', WaveshareEPaper2P7In),
@@ -62,6 +65,9 @@ def to_code(config):
     if model_type == 'a':
         rhs = WaveshareEPaperTypeA.new(model)
         var = cg.Pvariable(config[CONF_ID], rhs, WaveshareEPaperTypeA)
+    elif model_type == 'a1':
+        rhs = WaveshareEPaperTypeA1.new(model)
+        var = cg.Pvariable(config[CONF_ID], rhs, WaveshareEPaperTypeA1)
     elif model_type == 'b':
         rhs = model.new()
         var = cg.Pvariable(config[CONF_ID], rhs, model)
