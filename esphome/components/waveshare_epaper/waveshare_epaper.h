@@ -101,6 +101,42 @@ class WaveshareEPaperTypeA : public WaveshareEPaper {
   WaveshareEPaperTypeAModel model_;
 };
 
+
+enum WaveshareEPaperTypeA1Model {
+  TTGO_EPAPER_2_13_IN_B1 = 0
+};
+class WaveshareEPaperTypeA1 : public WaveshareEPaper {
+ public:
+  WaveshareEPaperTypeA1(WaveshareEPaperTypeA1Model model);
+
+  void initialize() override;
+
+  void dump_config() override;
+
+  void display() override;
+
+  void deep_sleep() override {
+    // COMMAND DEEP SLEEP MODE
+    this->command(0x10);
+    this->wait_until_idle_();
+  }
+
+  void set_full_update_every(uint32_t full_update_every);
+
+ protected:
+  void write_lut_(const uint8_t *lut, uint8_t size);
+
+  bool wait_until_idle_();
+
+  int get_width_internal() override;
+
+  int get_height_internal() override;
+
+  uint32_t full_update_every_{30};
+  uint32_t at_update_{0};
+  WaveshareEPaperTypeA1Model model_;
+};
+
 enum WaveshareEPaperTypeBModel {
   WAVESHARE_EPAPER_2_7_IN = 0,
   WAVESHARE_EPAPER_4_2_IN,
