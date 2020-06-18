@@ -106,7 +106,7 @@ class WaveshareEPaperTypeA : public WaveshareEPaper {
 enum WaveshareEPaperTypeA1Model {
   TTGO_EPAPER_2_13_IN_B1 = 0
 };
-class WaveshareEPaperTypeA1 : public WaveshareEPaperTypeA {
+class WaveshareEPaperTypeA1 : public WaveshareEPaper {
  public:
   WaveshareEPaperTypeA1(WaveshareEPaperTypeA1Model model);
 
