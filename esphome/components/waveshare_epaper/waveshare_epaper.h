@@ -100,7 +100,7 @@ class WaveshareEPaperTypeA : public WaveshareEPaper {
   uint32_t full_update_every_{30};
   uint32_t at_update_{0};
   WaveshareEPaperTypeAModel model_;
-  int idle_timeout_ = 4000;
+  int idle_timeout_ = 10000;
 };
 
 
