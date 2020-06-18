@@ -61,7 +61,7 @@ class WaveshareEPaper : public PollingComponent,
   GPIOPin *reset_pin_{nullptr};
   GPIOPin *dc_pin_;
   GPIOPin *busy_pin_{nullptr};
-  int idle_timeout_{1000};
+  virtual int idle_timeout_{1000};
 };
 
 enum WaveshareEPaperTypeAModel {
@@ -134,7 +134,7 @@ class WaveshareEPaperTypeA1 : public WaveshareEPaper {
   uint32_t full_update_every_{30};
   uint32_t at_update_{0};
   WaveshareEPaperTypeA1Model model_;
-  int idle_timeout_{4000};
+  int idle_timeout_{4000} override;
 };
 
 enum WaveshareEPaperTypeBModel {
