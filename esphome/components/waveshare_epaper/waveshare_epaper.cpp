@@ -411,9 +411,9 @@ void HOT WaveshareEPaperTypeA1::display() {
   // COMMAND WRITE RAM
   this->command(0x24);
   this->start_data_();
-  for(int i=0; i < this->get_width_internal(); i++) {
-    for(int j=0; j < this->get_height_internal(); j++) {
-      int idx = i + j*this->get_width_internal();
+  for(int i=0; i < this->get_height_internal(); i++) {
+    for(int j=0; j < this->get_width_internal(); j++) {
+      int idx = j + i*this->get_width_internal();
       this->write_byte(this->buffer_[idx]);
     }
   }
