@@ -444,21 +444,6 @@ void WaveshareEPaperTypeA1::write_lut_(const uint8_t *lut, const uint8_t size) {
   for (uint8_t i = 0; i < size; i++)
     this->data(lut[i]);
 }
-bool WaveshareEPaper::wait_until_idle_() {
-  if (this->busy_pin_ == nullptr) {
-    return true;
-  }
-
-  const uint32_t start = millis();
-  while (this->busy_pin_->digital_read()) {
-    if (millis() - start > 4000) {
-      ESP_LOGE(TAG, "Timeout while displaying image!");
-      return false;
-    }
-    delay(10);
-  }
-  return true;
-}
 WaveshareEPaperTypeA1::WaveshareEPaperTypeA1(WaveshareEPaperTypeA1Model model) : model_(model) {}
 void WaveshareEPaperTypeA1::set_full_update_every(uint32_t full_update_every) {
   this->full_update_every_ = full_update_every;
