@@ -417,7 +417,7 @@ void HOT WaveshareEPaperTypeA1::display() {
       this->data(this->buffer_[idx]);
     }
   }
-  this->write_array(this->buffer_, this->get_buffer_length_());
+  // this->write_array(this->buffer_, this->get_buffer_length_());
   this->end_data_();
 
   // COMMAND DISPLAY UPDATE CONTROL 2
