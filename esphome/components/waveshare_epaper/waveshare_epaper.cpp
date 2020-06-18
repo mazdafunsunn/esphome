@@ -110,7 +110,6 @@ bool WaveshareEPaper::wait_until_idle_() {
     }
     delay(10);
   }
-  ESP_LOGI(TAG, "Total idle wait: %lu", millis() - start);
   return true;
 }
 void WaveshareEPaper::update() {
