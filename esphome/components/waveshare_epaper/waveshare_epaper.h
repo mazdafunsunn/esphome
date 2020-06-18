@@ -126,7 +126,7 @@ class WaveshareEPaperTypeA1 : public WaveshareEPaper {
  protected:
   void write_lut_(const uint8_t *lut, uint8_t size);
 
-  bool wait_until_idle_();
+  bool wait_until_idle_() override;
 
   int get_width_internal() override;
 
