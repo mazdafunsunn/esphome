@@ -38,7 +38,7 @@ class WaveshareEPaper : public PollingComponent,
  protected:
   void draw_absolute_pixel_internal(int x, int y, Color color) override;
 
-  bool wait_until_idle_();
+  virtual bool wait_until_idle_();
 
   void setup_pins_();
 
@@ -61,7 +61,7 @@ class WaveshareEPaper : public PollingComponent,
   GPIOPin *reset_pin_{nullptr};
   GPIOPin *dc_pin_;
   GPIOPin *busy_pin_{nullptr};
-  virtual int idle_timeout_ = 1000;
+  virtual int idle_timeout_() {return 1000;}
 };
 
 enum WaveshareEPaperTypeAModel {
@@ -100,7 +100,6 @@ class WaveshareEPaperTypeA : public WaveshareEPaper {
   uint32_t full_update_every_{30};
   uint32_t at_update_{0};
   WaveshareEPaperTypeAModel model_;
-  virtual int idle_timeout_ = 10000;
 };
 
 
@@ -135,6 +134,7 @@ class WaveshareEPaperTypeA1 : public WaveshareEPaper {
   uint32_t full_update_every_{30};
   uint32_t at_update_{0};
   WaveshareEPaperTypeA1Model model_;
+  int idle_timeout_() {return 10000;}
 };
 
 enum WaveshareEPaperTypeBModel {
