@@ -435,7 +435,7 @@ void HOT WaveshareEPaperTypeA1::display() {
 int WaveshareEPaperTypeA1::get_width_internal() {
   switch (this->model_) {
     case TTGO_EPAPER_2_13_IN_B1:
-      return 120;
+      return 122;
   }
   return 0;
 }
