@@ -414,7 +414,7 @@ void HOT WaveshareEPaperTypeA1::display() {
   this->start_data_();
   int16_t wb = (this->get_width_internal() + 7) / 8;
   for(int i=0; i<this->get_height_internal(); i++) {
-    for(int j=0; j < (this->get_width_internal() + 7) / 8; j++) {
+    for(int j=0; j < 15; j++) {
       int idx = j + (this->get_height_internal() - 1 - i) * wb;
       this->write_byte(this->buffer_[idx]);
     }
