@@ -387,7 +387,7 @@ void HOT WaveshareEPaperTypeA1::display() {
   // COMMAND SET RAM X ADDRESS START END POSITION
   this->command(0x44);
   this->data(0x00);
-  this->data((this->get_width_internal() - 1) >> 3);
+  this->data((this->get_width_internal() + 7) >> 3);
   // COMMAND SET RAM Y ADDRESS START END POSITION
   this->command(0x45);
   this->data(this->get_height_internal() - 1);
@@ -412,7 +412,7 @@ void HOT WaveshareEPaperTypeA1::display() {
   // COMMAND WRITE RAM
   this->command(0x24);
   this->start_data_();
-  int16_t wb = (this->get_width_internal() + 7) / 8;
+  int16_t wb = (this->get_width_internal() + 7) >> 3;
   for(int i=0; i<this->get_height_internal() + 0; i++) {
     for(int j=0; j < wb; j++) {
       int idx = j + (this->get_height_internal() - 1 - i) * wb;
