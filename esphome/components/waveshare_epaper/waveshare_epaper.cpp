@@ -433,7 +433,7 @@ void HOT WaveshareEPaperTypeA1::display() {
   this->status_clear_warning();
 }
 int WaveshareEPaperTypeA1::get_width_internal() {
-  return 122;
+  return 120;
 }
 int WaveshareEPaperTypeA1::get_height_internal() {
   return 250;
