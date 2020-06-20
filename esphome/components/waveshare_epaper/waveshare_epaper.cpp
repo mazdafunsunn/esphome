@@ -126,9 +126,9 @@ void HOT WaveshareEPaper::draw_absolute_pixel_internal(int x, int y, Color color
   if (x >= this->get_width_internal() || y >= this->get_height_internal() || x < 0 || y < 0)
     return;
 
-//  int width_padding = (8 - this->get_width_internal() % 8) % 8; // add this to get next multiple of 8
-//  const uint32_t pos = (x + y * (this->get_width_internal() + width_padding) ) / 8u;
-  const uint32_t pos = (x + y * this->get_width_internal()) / 8u;
+  int width_padding = (8 - this->get_width_internal() % 8) % 8; // add this to get next multiple of 8
+  const uint32_t pos = (x + y * (this->get_width_internal() + width_padding) ) / 8u;
+//  const uint32_t pos = (x + y * this->get_width_internal()) / 8u;
   const uint8_t subpos = x & 0x07;
   // flip logic
   if (!color.is_on())
@@ -414,7 +414,7 @@ void HOT WaveshareEPaperTypeA1::display() {
   // COMMAND WRITE RAM
   this->command(0x24);
   this->start_data_();
-  int16_t wb = (this->get_width_internal() - 1) / 8;
+  int16_t wb = (this->get_width_internal() + 7) / 8;
   for(int i=0; i<this->get_height_internal(); i++) {
     for(int j=0; j < get_width_internal() / 8; j++) {
       int idx = j + (this->get_height_internal() - 1 - i) * wb;
