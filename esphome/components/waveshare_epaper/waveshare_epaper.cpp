@@ -433,18 +433,10 @@ void HOT WaveshareEPaperTypeA1::display() {
   this->status_clear_warning();
 }
 int WaveshareEPaperTypeA1::get_width_internal() {
-  switch (this->model_) {
-    case TTGO_EPAPER_2_13_IN_B1:
-      return 120;
-  }
-  return 0;
+  return 122;
 }
 int WaveshareEPaperTypeA1::get_height_internal() {
-  switch (this->model_) {
-    case TTGO_EPAPER_2_13_IN_B1:
-      return 250;
-  }
-  return 0;
+  return 250;
 }
 void WaveshareEPaperTypeA1::write_lut_(const uint8_t *lut, const uint8_t size) {
   // COMMAND WRITE LUT REGISTER
