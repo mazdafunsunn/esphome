@@ -309,6 +309,7 @@ void HOT WaveshareEPaperTypeA::display() {
   this->start_data_();
   switch (this->model_) {
     case TTGO_EPAPER_2_13_IN_B1:
+    { // block needed because of variable initializations
       int16_t wb = ((this->get_width_internal()) >> 3);
       for(int i=0; i<this->get_height_internal(); i++) {
         for(int j=0; j<wb; j++) {
@@ -317,6 +318,7 @@ void HOT WaveshareEPaperTypeA::display() {
         }
       }
       break;
+    }
     default:
       this->write_array(this->buffer_, this->get_buffer_length_());
   }
