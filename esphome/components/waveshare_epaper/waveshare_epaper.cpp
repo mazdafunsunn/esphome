@@ -349,7 +349,8 @@ void WaveshareEPaperTypeA1::initialize() {
 
   // COMMAND DATA ENTRY MODE SETTING
   this->command(0x11);
-  this->data(0x01);  // x increase, y decrease : as in demo code
+  this->data(0x03);  // from top left to bottom right
+//  this->data(0x01);  // x increase, y decrease : as in demo code
 }
 void WaveshareEPaperTypeA1::dump_config() {
   LOG_DISPLAY("", "Waveshare E-Paper", this);
@@ -390,18 +391,28 @@ void HOT WaveshareEPaperTypeA1::display() {
   this->data((this->get_width_internal() - 1) >> 3);
   // COMMAND SET RAM Y ADDRESS START END POSITION
   this->command(0x45);
+/*
   this->data(this->get_height_internal() - 1);
   this->data((this->get_height_internal() - 1) >> 8);
   this->data(0x00);
   this->data(0x00);
+*/
+  this->data(0x00);
+  this->data(0x00);
+  this->data(this->get_height_internal() - 1);
+  this->data((this->get_height_internal() - 1) >> 8);
 
   // COMMAND SET RAM X ADDRESS COUNTER
   this->command(0x4E);
   this->data(0x00);
   // COMMAND SET RAM Y ADDRESS COUNTER
   this->command(0x4F);
+/*
   this->data(this->get_height_internal() - 1);
   this->data((this->get_height_internal() - 1) >> 8);
+*/
+  this->data(0x00);
+  this->data(0x00);
 
   if (!this->wait_until_idle_()) {
     this->status_set_warning();
@@ -412,6 +423,7 @@ void HOT WaveshareEPaperTypeA1::display() {
   // COMMAND WRITE RAM
   this->command(0x24);
   this->start_data_();
+/*
   int16_t wb = ((this->get_width_internal()) >> 3);
   for(int i=0; i<this->get_height_internal(); i++) {
     for(int j=0; j<wb; j++) {
@@ -419,7 +431,8 @@ void HOT WaveshareEPaperTypeA1::display() {
       this->write_byte(this->buffer_[idx]);
     }
   }
-  // this->write_array(this->buffer_, this->get_buffer_length_());
+*/
+  this->write_array(this->buffer_, this->get_buffer_length_());
   this->end_data_();
 
   // COMMAND DISPLAY UPDATE CONTROL 2
