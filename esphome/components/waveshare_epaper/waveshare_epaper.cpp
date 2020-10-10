@@ -19,7 +19,6 @@ static const uint8_t PARTIAL_UPDATE_LUT[LUT_SIZE_WAVESHARE] = {
     0x00, 0x00, 0x00, 0x00, 0x00, 0x13, 0x14, 0x44, 0x12, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00};
 
 static const uint8_t LUT_SIZE_TTGO = 70;
-static const uint8_t LUT_SIZE_TTGO_B73 = 100;
 
 static const uint8_t FULL_UPDATE_LUT_TTGO[LUT_SIZE_TTGO] = {
     0x80, 0x60, 0x40, 0x00, 0x00, 0x00, 0x00,  // LUT0: BB:     VS 0 ~7
@@ -35,6 +34,23 @@ static const uint8_t FULL_UPDATE_LUT_TTGO[LUT_SIZE_TTGO] = {
     0x00, 0x00, 0x00, 0x00, 0x00,              // TP5 A~D RP5
     0x00, 0x00, 0x00, 0x00, 0x00,              // TP6 A~D RP6
 };
+
+static const uint8_t PARTIAL_UPDATE_LUT_TTGO[LUT_SIZE_TTGO] = {
+    0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,  // LUT0: BB:     VS 0 ~7
+    0x80, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,  // LUT1: BW:     VS 0 ~7
+    0x40, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,  // LUT2: WB:     VS 0 ~7
+    0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,  // LUT3: WW:     VS 0 ~7
+    0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,  // LUT4: VCOM:   VS 0 ~7
+    0x0A, 0x00, 0x00, 0x00, 0x00,              // TP0 A~D RP0
+    0x00, 0x00, 0x00, 0x00, 0x00,              // TP1 A~D RP1
+    0x00, 0x00, 0x00, 0x00, 0x00,              // TP2 A~D RP2
+    0x00, 0x00, 0x00, 0x00, 0x00,              // TP3 A~D RP3
+    0x00, 0x00, 0x00, 0x00, 0x00,              // TP4 A~D RP4
+    0x00, 0x00, 0x00, 0x00, 0x00,              // TP5 A~D RP5
+    0x00, 0x00, 0x00, 0x00, 0x00,              // TP6 A~D RP6
+};
+
+static const uint8_t LUT_SIZE_TTGO_B73 = 100;
 
 static const uint8_t FULL_UPDATE_LUT_TTGO_B73[LUT_SIZE_TTGO_B73] = {
     0xA0, 0x90, 0x50, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x50, 0x90, 0xA0, 0x00, 0x00, 0x00, 0x00,
@@ -56,20 +72,17 @@ static const uint8_t PARTIAL_UPDATE_LUT_TTGO_B73[LUT_SIZE_TTGO_B73] = {
     0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
 };
 
-static const uint8_t PARTIAL_UPDATE_LUT_TTGO[LUT_SIZE_TTGO] = {
-    0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,  // LUT0: BB:     VS 0 ~7
-    0x80, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,  // LUT1: BW:     VS 0 ~7
-    0x40, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,  // LUT2: WB:     VS 0 ~7
-    0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,  // LUT3: WW:     VS 0 ~7
-    0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,  // LUT4: VCOM:   VS 0 ~7
-    0x0A, 0x00, 0x00, 0x00, 0x00,              // TP0 A~D RP0
-    0x00, 0x00, 0x00, 0x00, 0x00,              // TP1 A~D RP1
-    0x00, 0x00, 0x00, 0x00, 0x00,              // TP2 A~D RP2
-    0x00, 0x00, 0x00, 0x00, 0x00,              // TP3 A~D RP3
-    0x00, 0x00, 0x00, 0x00, 0x00,              // TP4 A~D RP4
-    0x00, 0x00, 0x00, 0x00, 0x00,              // TP5 A~D RP5
-    0x00, 0x00, 0x00, 0x00, 0x00,              // TP6 A~D RP6
+static const uint8_t LUT_SIZE_TTGO_B1 = 29;
+
+static const uint8_t FULL_UPDATE_LUT_TTGO_B1[LUT_SIZE_TTGO_B1] = {
+  0x22, 0x55, 0xAA, 0x55, 0xAA, 0x55, 0xAA, 0x11, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
+  0x00, 0x1E, 0x1E, 0x1E, 0x1E, 0x1E, 0x1E, 0x1E, 0x1E, 0x01, 0x00, 0x00, 0x00, 0x00
 };
+static const uint8_t PARTIAL_UPDATE_LUT_TTGO_B1[LUT_SIZE_TTGO_B1] = {
+  0x18, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
+  0x00, 0x0F, 0x01, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00
+};
+
 
 void WaveshareEPaper::setup_pins_() {
   this->init_internal_(this->get_buffer_length_());
@@ -178,7 +191,13 @@ void WaveshareEPaperTypeA::initialize() {
 
   // COMMAND DATA ENTRY MODE SETTING
   this->command(0x11);
-  this->data(0x03);  // from top left to bottom right
+  switch (this->model_) {
+    case TTGO_EPAPER_2_13_IN_B1:
+      this->data(0x01);  // x increase, y decrease : as in demo code
+      break;
+    default:
+      this->data(0x03);  // from top left to bottom right
+  }
 }
 void WaveshareEPaperTypeA::dump_config() {
   LOG_DISPLAY("", "Waveshare E-Paper", this);
@@ -194,6 +213,9 @@ void WaveshareEPaperTypeA::dump_config() {
       break;
     case TTGO_EPAPER_2_13_IN_B73:
       ESP_LOGCONFIG(TAG, "  Model: 2.13in (TTGO B73)");
+      break;
+    case TTGO_EPAPER_2_13_IN_B1:
+      ESP_LOGCONFIG(TAG, "  Model: 2.13in (TTGO B1)");
       break;
     case WAVESHARE_EPAPER_2_9_IN:
       ESP_LOGCONFIG(TAG, "  Model: 2.9in");
@@ -215,36 +237,67 @@ void HOT WaveshareEPaperTypeA::display() {
     bool prev_full_update = this->at_update_ == 1;
     bool full_update = this->at_update_ == 0;
     if (full_update != prev_full_update) {
-      if (this->model_ == TTGO_EPAPER_2_13_IN) {
-        this->write_lut_(full_update ? FULL_UPDATE_LUT_TTGO : PARTIAL_UPDATE_LUT_TTGO, LUT_SIZE_TTGO);
-      } else if (this->model_ == TTGO_EPAPER_2_13_IN_B73) {
-        this->write_lut_(full_update ? FULL_UPDATE_LUT_TTGO_B73 : PARTIAL_UPDATE_LUT_TTGO_B73, LUT_SIZE_TTGO_B73);
-      } else {
-        this->write_lut_(full_update ? FULL_UPDATE_LUT : PARTIAL_UPDATE_LUT, LUT_SIZE_WAVESHARE);
+      switch (this->model_) {
+        case TTGO_EPAPER_2_13_IN:
+	  this->write_lut_(full_update ? FULL_UPDATE_LUT_TTGO : PARTIAL_UPDATE_LUT_TTGO, LUT_SIZE_TTGO);
+          break;
+        case TTGO_EPAPER_2_13_IN_B73:
+          this->write_lut_(full_update ? FULL_UPDATE_LUT_TTGO_B73 : PARTIAL_UPDATE_LUT_TTGO_B73, LUT_SIZE_TTGO_B73);
+          break;
+        case TTGO_EPAPER_2_13_IN_B1:
+          this->write_lut_(full_update ? FULL_UPDATE_LUT_TTGO_B1 : PARTIAL_UPDATE_LUT_TTGO_B1, LUT_SIZE_TTGO_B1);
+          break;
+        default:
+          this->write_lut_(full_update ? FULL_UPDATE_LUT : PARTIAL_UPDATE_LUT, LUT_SIZE_WAVESHARE);
       }
     }
     this->at_update_ = (this->at_update_ + 1) % this->full_update_every_;
   }
 
   // Set x & y regions we want to write to (full)
-  // COMMAND SET RAM X ADDRESS START END POSITION
-  this->command(0x44);
-  this->data(0x00);
-  this->data((this->get_width_internal() - 1) >> 3);
-  // COMMAND SET RAM Y ADDRESS START END POSITION
-  this->command(0x45);
-  this->data(0x00);
-  this->data(0x00);
-  this->data(this->get_height_internal() - 1);
-  this->data((this->get_height_internal() - 1) >> 8);
+  switch (this->model_) {
+    case TTGO_EPAPER_2_13_IN_B1:
+      // COMMAND SET RAM X ADDRESS START END POSITION
+      this->command(0x44);
+      this->data(0x00);
+      this->data((this->get_width_internal() - 1) >> 3);
+      // COMMAND SET RAM Y ADDRESS START END POSITION
+      this->command(0x45);
+      this->data(this->get_height_internal() - 1);
+      this->data((this->get_height_internal() - 1) >> 8);
+      this->data(0x00);
+      this->data(0x00);
 
-  // COMMAND SET RAM X ADDRESS COUNTER
-  this->command(0x4E);
-  this->data(0x00);
-  // COMMAND SET RAM Y ADDRESS COUNTER
-  this->command(0x4F);
-  this->data(0x00);
-  this->data(0x00);
+      // COMMAND SET RAM X ADDRESS COUNTER
+      this->command(0x4E);
+      this->data(0x00);
+      // COMMAND SET RAM Y ADDRESS COUNTER
+      this->command(0x4F);
+      this->data(this->get_height_internal() - 1);
+      this->data((this->get_height_internal() - 1) >> 8);
+
+      break;
+
+    default:
+      // COMMAND SET RAM X ADDRESS START END POSITION
+      this->command(0x44);
+      this->data(0x00);
+      this->data((this->get_width_internal() - 1) >> 3);
+      // COMMAND SET RAM Y ADDRESS START END POSITION
+      this->command(0x45);
+      this->data(0x00);
+      this->data(0x00);
+      this->data(this->get_height_internal() - 1);
+      this->data((this->get_height_internal() - 1) >> 8);
+
+      // COMMAND SET RAM X ADDRESS COUNTER
+      this->command(0x4E);
+      this->data(0x00);
+      // COMMAND SET RAM Y ADDRESS COUNTER
+      this->command(0x4F);
+      this->data(0x00);
+      this->data(0x00);
+  }
 
   if (!this->wait_until_idle_()) {
     this->status_set_warning();
@@ -254,7 +307,19 @@ void HOT WaveshareEPaperTypeA::display() {
   // COMMAND WRITE RAM
   this->command(0x24);
   this->start_data_();
-  this->write_array(this->buffer_, this->get_buffer_length_());
+  switch (this->model_) {
+    case TTGO_EPAPER_2_13_IN_B1:
+      int16_t wb = ((this->get_width_internal()) >> 3);
+      for(int i=0; i<this->get_height_internal(); i++) {
+        for(int j=0; j<wb; j++) {
+          int idx = j + (this->get_height_internal() - 1 - i) * wb;
+          this->write_byte(this->buffer_[idx]);
+        }
+      }
+      break;
+    default:
+      this->write_array(this->buffer_, this->get_buffer_length_());
+  }
   this->end_data_();
 
   // COMMAND DISPLAY UPDATE CONTROL 2
@@ -277,6 +342,8 @@ int WaveshareEPaperTypeA::get_width_internal() {
       return 128;
     case TTGO_EPAPER_2_13_IN_B73:
       return 128;
+    case TTGO_EPAPER_2_13_IN_B1:
+      return 128;
     case WAVESHARE_EPAPER_2_9_IN:
       return 128;
   }
@@ -291,6 +358,8 @@ int WaveshareEPaperTypeA::get_height_internal() {
     case TTGO_EPAPER_2_13_IN:
       return 250;
     case TTGO_EPAPER_2_13_IN_B73:
+      return 250;
+    case TTGO_EPAPER_2_13_IN_B1:
       return 250;
     case WAVESHARE_EPAPER_2_9_IN:
       return 296;
@@ -308,20 +377,19 @@ void WaveshareEPaperTypeA::set_full_update_every(uint32_t full_update_every) {
   this->full_update_every_ = full_update_every;
 }
 
+int WaveshareEPaperTypeA::idle_timeout_(){
+  switch (this->model_) {
+    case TTGO_EPAPER_2_13_IN_B1:
+      return 4000;
+      break;
+    default:
+      return WaveshareEPaper::idle_timeout();
+  }
+}
+
 // ========================================================
 //                          Type A1
 // ========================================================
-static const uint8_t LUT_SIZE_TTGO_B1 = 29;
-
-static const uint8_t FULL_UPDATE_LUT_TTGO_B1[LUT_SIZE_TTGO_B1] = {
-  0x22, 0x55, 0xAA, 0x55, 0xAA, 0x55, 0xAA, 0x11, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
-  0x00, 0x1E, 0x1E, 0x1E, 0x1E, 0x1E, 0x1E, 0x1E, 0x1E, 0x01, 0x00, 0x00, 0x00, 0x00
-};
-static const uint8_t PARTIAL_UPDATE_LUT_TTGO_B1[LUT_SIZE_TTGO_B1] = {
-  0x18, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
-  0x00, 0x0F, 0x01, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00  
-};
-
 void WaveshareEPaperTypeA1::initialize() {
   // COMMAND DRIVER OUTPUT CONTROL
   this->command(0x01);
@@ -384,24 +452,6 @@ void HOT WaveshareEPaperTypeA1::display() {
   }
 
   // Set x & y regions we want to write to (full)
-  // COMMAND SET RAM X ADDRESS START END POSITION
-  this->command(0x44);
-  this->data(0x00);
-  this->data((this->get_width_internal() - 1) >> 3);
-  // COMMAND SET RAM Y ADDRESS START END POSITION
-  this->command(0x45);
-  this->data(this->get_height_internal() - 1);
-  this->data((this->get_height_internal() - 1) >> 8);
-  this->data(0x00);
-  this->data(0x00);
-
-  // COMMAND SET RAM X ADDRESS COUNTER
-  this->command(0x4E);
-  this->data(0x00);
-  // COMMAND SET RAM Y ADDRESS COUNTER
-  this->command(0x4F);
-  this->data(this->get_height_internal() - 1);
-  this->data((this->get_height_internal() - 1) >> 8);
 
   if (!this->wait_until_idle_()) {
     this->status_set_warning();

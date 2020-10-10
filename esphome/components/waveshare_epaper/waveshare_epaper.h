@@ -70,6 +70,7 @@ enum WaveshareEPaperTypeAModel {
   WAVESHARE_EPAPER_2_9_IN,
   TTGO_EPAPER_2_13_IN,
   TTGO_EPAPER_2_13_IN_B73,
+  TTGO_EPAPER_2_13_IN_B1,
 };
 
 class WaveshareEPaperTypeA : public WaveshareEPaper {
@@ -100,6 +101,7 @@ class WaveshareEPaperTypeA : public WaveshareEPaper {
   uint32_t full_update_every_{30};
   uint32_t at_update_{0};
   WaveshareEPaperTypeAModel model_;
+  int idle_timeout_() override;
 };
 
 
