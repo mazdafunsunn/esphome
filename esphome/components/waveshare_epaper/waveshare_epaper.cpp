@@ -382,7 +382,7 @@ void WaveshareEPaperTypeA::set_full_update_every(uint32_t full_update_every) {
 int WaveshareEPaperTypeA::idle_timeout_(){
   switch (this->model_) {
     case TTGO_EPAPER_2_13_IN_B1:
-      return 2000;
+      return 2500;
       break;
     default:
       return WaveshareEPaper::idle_timeout_();
