@@ -383,7 +383,7 @@ int WaveshareEPaperTypeA::idle_timeout_(){
       return 4000;
       break;
     default:
-      return WaveshareEPaper::idle_timeout();
+      return WaveshareEPaper::idle_timeout_();
   }
 }
 
@@ -422,7 +422,7 @@ void WaveshareEPaperTypeA1::initialize() {
 void WaveshareEPaperTypeA1::dump_config() {
   LOG_DISPLAY("", "Waveshare E-Paper", this);
   switch (this->model_) {
-    case TTGO_EPAPER_2_13_IN_B1:
+    case TTGO_EPAPER_2_13_IN_B1_OLD:
       ESP_LOGCONFIG(TAG, "  Model: 2.13in (TTGO B1)");
       break;
   }
@@ -443,7 +443,7 @@ void HOT WaveshareEPaperTypeA1::display() {
     bool full_update = this->at_update_ == 0;
     if (full_update != prev_full_update) {
       switch (this->model_) {
-        case TTGO_EPAPER_2_13_IN_B1:
+        case TTGO_EPAPER_2_13_IN_B1_OLD:
           this->write_lut_(full_update ? FULL_UPDATE_LUT_TTGO_B1 : PARTIAL_UPDATE_LUT_TTGO_B1, LUT_SIZE_TTGO_B1);
           break;
       }
