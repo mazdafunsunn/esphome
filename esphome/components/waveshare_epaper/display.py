@@ -40,7 +40,7 @@ MODELS = {
 def validate_full_update_every_only_type_a(value):
     if CONF_FULL_UPDATE_EVERY not in value:
         return value
-    if MODELS[value[CONF_MODEL]][0] not in ['a', 'a1']:
+    if MODELS[value[CONF_MODEL]][0] != 'a':
         raise cv.Invalid("The 'full_update_every' option is only available for models "
                          "'1.54in', '2.13in' and '2.90in'.")
     return value

@@ -38,7 +38,7 @@ class WaveshareEPaper : public PollingComponent,
  protected:
   void draw_absolute_pixel_internal(int x, int y, Color color) override;
 
-  virtual bool wait_until_idle_();
+  bool wait_until_idle_();
 
   void setup_pins_();
 
@@ -103,7 +103,6 @@ class WaveshareEPaperTypeA : public WaveshareEPaper {
   WaveshareEPaperTypeAModel model_;
   int idle_timeout_() override;
 };
-
 
 enum WaveshareEPaperTypeBModel {
   WAVESHARE_EPAPER_2_7_IN = 0,
