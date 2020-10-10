@@ -412,7 +412,7 @@ void HOT WaveshareEPaperTypeA1::display() {
   // COMMAND WRITE RAM
   this->command(0x24);
   this->start_data_();
-  int16_t wb = ((this->get_width_internal() + 7) >> 3) + 3;
+  int16_t wb = ((this->get_width_internal()) >> 3);
   for(int i=0; i<this->get_height_internal(); i++) {
     for(int j=0; j<wb; j++) {
       int idx = j + (this->get_height_internal() - 1 - i) * wb;
@@ -432,7 +432,7 @@ void HOT WaveshareEPaperTypeA1::display() {
 
   this->status_clear_warning();
 }
-int WaveshareEPaperTypeA1::get_width_internal() { return 122; }
+int WaveshareEPaperTypeA1::get_width_internal() { return 128; }
 int WaveshareEPaperTypeA1::get_height_internal() { return 250; }
 
 void WaveshareEPaperTypeA1::write_lut_(const uint8_t *lut, const uint8_t size) {
