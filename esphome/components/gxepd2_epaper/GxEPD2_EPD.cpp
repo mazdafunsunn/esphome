@@ -47,8 +47,10 @@ void HOT GxEPD2_EPD::display(bool partial_update_mode) {
     this->writeImageAgain(this->buffer_,0,0,this->WIDTH,this->HEIGHT, false, this->_reverse);
     ESP_LOGD(TAG, "writeImageAgain");
   }
-  this->powerOff();
-  ESP_LOGD(TAG, "powerOff");
+  if (!partial_update_mode) {
+    this->powerOff();
+    ESP_LOGD(TAG, "powerOff");
+  }
   ESP_LOGD(TAG, "Done refreshing display");
 }
 
