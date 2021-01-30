@@ -40,11 +40,15 @@ GxEPD2_EPD::GxEPD2_EPD(int8_t cs, int8_t dc, int8_t rst, int8_t busy, int8_t bus
 void HOT GxEPD2_EPD::display(bool partial_update_mode) {
   ESP_LOGD(TAG, "Refreshing display");
   this->writeImage(this->buffer_,0,0,this->WIDTH,this->HEIGHT, false, this->_reverse);
+  ESP_LOGD(TAG, "writeImage");
   this->refresh(partial_update_mode);
+  ESP_LOGD(TAG, "refresh");
   if (this->hasFastPartialUpdate) {
     this->writeImageAgain(this->buffer_,0,0,this->WIDTH,this->HEIGHT, false, this->_reverse);
+    ESP_LOGD(TAG, "writeImageAgain");
   }
   this->powerOff();
+  ESP_LOGD(TAG, "powerOff");
   ESP_LOGD(TAG, "Done refreshing display");
 }
 
