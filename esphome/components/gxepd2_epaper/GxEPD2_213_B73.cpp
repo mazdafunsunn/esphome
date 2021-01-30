@@ -420,7 +420,7 @@ void GxEPD2_213_B73::_Init_Part()
 void GxEPD2_213_B73::_Update_Full()
 {
   _writeCommand(0x22);
-  _writeData(0xc7);
+  _writeData(0xf7);
   _writeCommand(0x20);
   _waitWhileBusy("_Update_Full", full_refresh_time);
 }
@@ -428,7 +428,7 @@ void GxEPD2_213_B73::_Update_Full()
 void GxEPD2_213_B73::_Update_Part()
 {
   _writeCommand(0x22);
-  _writeData(0xc4);
+  _writeData(0xff);
   _writeCommand(0x20);
   _waitWhileBusy("_Update_Part", partial_refresh_time);
 }
