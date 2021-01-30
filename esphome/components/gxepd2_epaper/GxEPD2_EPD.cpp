@@ -47,8 +47,8 @@ void HOT GxEPD2_EPD::display(bool partial_update_mode) {
   }
   this->refresh(partial_update_mode);
   ESP_LOGD(TAG, "refresh");
-  this->powerOff();
-  ESP_LOGD(TAG, "powerOff");
+  this->hibernate();
+  ESP_LOGD(TAG, "hibernate");
   ESP_LOGD(TAG, "Done refreshing display");
 }
 
