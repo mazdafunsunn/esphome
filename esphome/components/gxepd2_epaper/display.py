@@ -93,7 +93,7 @@ CONFIG_SCHEMA = cv.All(display.FULL_DISPLAY_SCHEMA.extend({
     cv.Optional(CONF_BUSY_PIN): pins.gpio_input_pin_schema,
     cv.Optional(CONF_FULL_UPDATE_EVERY): cv.uint32_t,
     cv.Optional(CONF_MANUAL_DISPLAY): cv.boolean,
-}).extend(cv.polling_component_schema('1s')).extend(spi.spi_device_schema()),
+}).extend(cv.polling_component_schema('10s')).extend(spi.spi_device_schema()),
                        cv.has_at_most_one_key(CONF_PAGES, CONF_LAMBDA))
 
 def to_code(config):
