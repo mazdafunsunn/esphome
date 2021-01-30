@@ -1,6 +1,6 @@
 #!/bin/bash
 
-VERSION=1.2.14
+VERSION=1.2.16
 
 ##
 set -euo pipefail

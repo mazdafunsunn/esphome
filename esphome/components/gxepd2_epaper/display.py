@@ -14,11 +14,11 @@ GxEPD2_EPD = gxepd2_epaper_ns.class_('GxEPD2_EPD', cg.PollingComponent, spi.SPID
                                      display.DisplayBuffer)
 
 MODELS = {
-    '154_d67'   : { 'header': 'GxEPD2_154_D67.h',
-                    'class': gxepd2_epaper_ns.class_('GxEPD2_154_D67', GxEPD2_EPD)
-                  },
     '154'       : { 'header': 'GxEPD2_154.h',
                     'class': gxepd2_epaper_ns.class_('GxEPD2_154', GxEPD2_EPD)
+                  },
+    '154_d67'   : { 'header': 'GxEPD2_154_D67.h',
+                    'class': gxepd2_epaper_ns.class_('GxEPD2_154_D67', GxEPD2_EPD)
                   },
     '154_m09'   : { 'header': 'GxEPD2_154_M09.h',
                     'class': gxepd2_epaper_ns.class_('GxEPD2_154_M09', GxEPD2_EPD)
@@ -35,6 +35,9 @@ MODELS = {
     '213_b73'   : { 'header': 'GxEPD2_213_B73.h',
                     'class': gxepd2_epaper_ns.class_('GxEPD2_213_B73', GxEPD2_EPD)
                   },
+    '213_m21'   : { 'header': 'GxEPD2_213_M21.h',
+                    'class': gxepd2_epaper_ns.class_('GxEPD2_213_M21', GxEPD2_EPD)
+                  },
     '213_flex'  : { 'header': 'GxEPD2_213_flex.h',
                     'class': gxepd2_epaper_ns.class_('GxEPD2_213_flex', GxEPD2_EPD)
                   },
@@ -50,14 +53,23 @@ MODELS = {
     '290'       : { 'header': 'GxEPD2_290.h',
                     'class': gxepd2_epaper_ns.class_('GxEPD2_290', GxEPD2_EPD)
                   },
+    '290_m06'    : { 'header': 'GxEPD2_290_M06.h',
+                    'class': gxepd2_epaper_ns.class_('GxEPD2_290_M06', GxEPD2_EPD)
+                  },
     '290_t5'    : { 'header': 'GxEPD2_290_T5.h',
                     'class': gxepd2_epaper_ns.class_('GxEPD2_290_T5', GxEPD2_EPD)
+                  },
+    '290_t94'    : { 'header': 'GxEPD2_290_T94.h',
+                    'class': gxepd2_epaper_ns.class_('GxEPD2_290_T94', GxEPD2_EPD)
                   },
     '371'       : { 'header': 'GxEPD2_371.h',
                     'class': gxepd2_epaper_ns.class_('GxEPD2_371', GxEPD2_EPD)
                   },
     '420'       : { 'header': 'GxEPD2_420.h',
                     'class': gxepd2_epaper_ns.class_('GxEPD2_420', GxEPD2_EPD)
+                  },
+    '420_m01'   : { 'header': 'GxEPD2_420_M01.h',
+                    'class': gxepd2_epaper_ns.class_('GxEPD2_420_M01', GxEPD2_EPD)
                   },
     '583'       : { 'header': 'GxEPD2_583.h',
                     'class': gxepd2_epaper_ns.class_('GxEPD2_583', GxEPD2_EPD)
