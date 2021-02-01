@@ -140,7 +140,7 @@ class GxEPD2_EPD : public PollingComponent,
     GPIOPin *reset_pin_{nullptr};
     GPIOPin *dc_pin_;
     GPIOPin *busy_pin_{nullptr};
-    uint32_t full_update_every_{30};
+    uint32_t full_update_every_{1};
     uint32_t at_update_{0};
     bool manual_display_{false};
     // end esphome
