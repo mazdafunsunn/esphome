@@ -44,6 +44,9 @@ MODELS = {
     '213'       : { 'header': 'GxEPD2_213.h',
                     'class': gxepd2_epaper_ns.class_('GxEPD2_213', GxEPD2_EPD)
                   },
+    '213c'       : { 'header': 'GxEPD2_213c.h',
+                    'class': gxepd2_epaper_ns.class_('GxEPD2_213c', GxEPD2_EPD)
+                  },
     '260'       : { 'header': 'GxEPD2_260.h',
                     'class': gxepd2_epaper_ns.class_('GxEPD2_260', GxEPD2_EPD)
                   },
