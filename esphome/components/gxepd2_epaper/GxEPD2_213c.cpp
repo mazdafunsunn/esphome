@@ -11,7 +11,10 @@
 // Library: https://github.com/ZinggJM/GxEPD2
 
 #include "GxEPD2_213c.h"
-
+namespace esphome {
+namespace gxepd2_epaper {
+  
+  
 GxEPD2_213c::GxEPD2_213c(int16_t cs, int16_t dc, int16_t rst, int16_t busy) :
   GxEPD2_EPD(cs, dc, rst, busy, LOW, 20000000, WIDTH, HEIGHT, panel, hasColor, hasPartialUpdate, hasFastPartialUpdate)
 {
@@ -398,3 +401,5 @@ void GxEPD2_213c::_Update_Part()
   _writeCommand(0x12); //display refresh
   _waitWhileBusy("_Update_Part", partial_refresh_time);
 }
+}  // namespace gxepd2_epaper
+}  // namespace esphome
