@@ -14,7 +14,8 @@
 #define _GxEPD2_213c_H_
 
 #include "GxEPD2_EPD.h"
-
+namespace esphome {
+namespace gxepd2_epaper {
 class GxEPD2_213c : public GxEPD2_EPD
 {
   public:
@@ -73,3 +74,5 @@ class GxEPD2_213c : public GxEPD2_EPD
 };
 
 #endif
+}  // namespace gxepd2_epaper
+}  // namespace esphome
